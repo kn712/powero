@@ -4,7 +4,9 @@
       "Bash(npm run dev:*)",
       "Bash(npx tsc:*)",
       "Bash(pkill:*)",
-      "Bash(npm run:*)"
+      "Bash(npm run:*)",
+      "Bash(sudo npm install next@latest)",
+      "Bash(git *)"
     ],
     "deny": []
   }
