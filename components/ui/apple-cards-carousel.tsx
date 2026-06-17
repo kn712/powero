@@ -127,6 +127,8 @@ export const Carousel = ({
           onScroll={checkScrollability}
           onMouseEnter={() => { isHovered.current = true; }}
           onMouseLeave={() => { isHovered.current = false; }}
+          onTouchStart={() => { isHovered.current = true; }}
+          onTouchEnd={() => { isHovered.current = false; }}
         >
           <div
             className={cn(
@@ -274,19 +276,19 @@ export const Card = ({
       <motion.button
         layoutId={layout ? `card-${card.title}` : undefined}
         onClick={handleOpen}
-        className="relative z-10 flex h-[65vw] w-[80vw] flex-col items-start justify-start overflow-hidden rounded-3xl bg-gray-100 md:h-[55vh] md:w-[18vw] dark:bg-neutral-900"
+        className="relative z-10 flex h-[90vw] w-[52vw] flex-col items-start justify-start overflow-hidden rounded-3xl bg-gray-100 md:h-[55vh] md:w-[30vw] lg:w-[20vw]  dark:bg-neutral-900"
       >
         <div className="pointer-events-none absolute inset-x-0 top-0 z-30 h-full bg-gradient-to-b from-black/50 via-transparent to-transparent" />
         <div className="relative z-40 p-8">
           <motion.p
             layoutId={layout ? `category-${card.category}` : undefined}
-            className="text-left font-sans text-sm font-medium text-white md:text-base"
+            className="text-left font-sans text-base font-medium text-white md:text-base"
           >
             {card.category}
           </motion.p>
           <motion.p
             layoutId={layout ? `title-${card.title}` : undefined}
-            className="mt-2 max-w-xs text-left font-sans text-xl font-semibold [text-wrap:balance] text-white md:text-3xl"
+            className="mt-2 max-w-xs text-left font-sans text-3xl font-semibold [text-wrap:balance] text-white md:text-3xl"
           >
             {card.title}
           </motion.p>
