@@ -128,7 +128,8 @@ export const Carousel = ({
           onMouseEnter={() => { isHovered.current = true; }}
           onMouseLeave={() => { isHovered.current = false; }}
           onTouchStart={() => { isHovered.current = true; }}
-          onTouchEnd={() => { isHovered.current = false; }}
+          onTouchEnd={() => { setTimeout(() => { isHovered.current = false; }, 800); }}
+          onTouchCancel={() => { isHovered.current = false; }}
         >
           <div
             className={cn(
