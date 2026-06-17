@@ -42,7 +42,7 @@ const OrdersPage = async () => {
           <OrdersComponent orders={orders} />
         </Table>
       ) : (
-        <div className="flex flex-col items-center justify-center py-20 text-center text-gray-500">
+        <div className="flex flex-col items-center justify-center py-20 text-center text-darkColor">
           <p className="text-lg font-semibold">No orders found</p>
           <p className="text-sm mt-1">
             You haven&apos;t placed any orders yet.

@@ -1,14 +1,13 @@
 import type { Metadata } from "next";
-import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { ClerkProvider } from "@clerk/nextjs";
+import FloatingHeader from "@/components/FloatingHeader";
 
 export const metadata: Metadata = {
   title: {
-    template: "%s - Shopcart online store",
-    default: "Shopcart online store",
+    template: "%s | Powero",
+    default: "Powero — Your one stop shop",
   },
-  description: "Shopcart online store, Your one stop shop for all your needs",
+  description: "Powero, your one stop shop for all your needs",
 };
 
 export default function RootLayout({
@@ -17,12 +16,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ClerkProvider>
-      <div className="flex flex-col min-h-screen">
-        <Header />
-        <main className="flex-1">{children}</main>
-        <Footer />
-      </div>
-    </ClerkProvider>
+    <div className="flex flex-col min-h-screen">
+      <FloatingHeader />
+      <main className="flex-1 pt-20">{children}</main>
+      <Footer />
+    </div>
   );
 }

@@ -12,7 +12,7 @@ import AddToCartButton from "./AddToCartButton";
 
 const ProductCard = ({ product }: { product: Product }) => {
   return (
-    <div className="text-sm border-[1px] rounded-md border-darkBlue/20 group bg-white">
+    <div className="text-sm border-[1px] rounded-lg group bg-white">
       <div className="relative group overflow-hidden bg-shop_light_bg">
         {product?.images && (
           <Link href={`/product/${product?.slug?.current}`}>
@@ -20,57 +20,58 @@ const ProductCard = ({ product }: { product: Product }) => {
               src={urlFor(product.images[0]).url()}
               alt="productImage"
               width={500}
-              height={500}
+              height={700}
               priority
-              className={`w-full h-64 object-contain overflow-hidden transition-transform bg-shop_light_bg duration-500 
+              className={`w-full h-96 object-cover overflow-hidden transition-transform bg-shop_light_bg duration-500 
               ${product?.stock !== 0 ? "group-hover:scale-105" : "opacity-50"}`}
             />
           </Link>
         )}
         <ProductSideMenu product={product} />
         {product?.status === "sale" ? (
-          <p className="absolute top-2 left-2 z-10 text-xs border border-darkColor/50 px-2 rounded-full group-hover:border-lightGreen hover:text-shop_dark_green hoverEffect">
+          <p className="absolute top-3 left-3 z-10 text-md font-medium text-white bg-darkColor px-3 py-2 rounded-full">
             Sale!
           </p>
         ) : (
           <Link
             href={"/deal"}
-            className="absolute top-2 left-2 z-10 border border-shop_orange/50 p-1 rounded-full group-hover:border-shop_orange hover:text-shop_dark_green hoverEffect"
+            className="absolute top-3 left-2 z-10 rounded-full p-2 bg-shop_red  outline-none"
           >
             <Flame
               size={18}
-              fill="#fb6c08"
-              className="text-shop_orange/50 group-hover:text-shop_orange hoverEffect"
+              fill="#ffffff"
+              className="text-white"
             />
           </Link>
         )}
       </div>
       <div className="p-3 flex flex-col gap-2">
         {product?.categories && (
-          <p className="uppercase line-clamp-1 text-xs font-medium text-lightText">
+          <p className=" line-clamp-1 text-md font-medium text-lightText">
             {product.categories.map((cat) => cat).join(", ")}
           </p>
         )}
-        <Title className="text-sm line-clamp-1">{product?.name}</Title>
-        <div className="flex items-center gap-2">
-          <div className="flex items-center">
+        <Title className="text-lg line-clamp-1">{product?.name}</Title>
+        <div className="flex items-center gap-3">
+          <div className="flex items-center -space-x-1">
             {[...Array(5)].map((_, index) => (
               <StarIcon
                 key={index}
+                fontSize={20}
                 className={
-                  index < 4 ? "text-shop_light_green" : " text-lightText"
+                  index < 4 ? "text-shop_yellow" : " text-lightColor"
                 }
-                fill={index < 4 ? "#93D991" : "#ababab"}
+                fill={index < 4 ? "#ffb400" : "#646464"}
               />
             ))}
           </div>
-          <p className="text-lightText text-xs tracking-wide">5 Reviews</p>
+          <p className="text-lightText text-xs tracking-wide">2450 Reviews</p>
         </div>
 
         <div className="flex items-center gap-2.5">
           <p className="font-medium">In Stock</p>
           <p
-            className={`${product?.stock === 0 ? "text-red-600" : "text-shop_dark_green/80 font-semibold"}`}
+            className={`${product?.stock === 0 ? "text-shop_red" : "text-darkColor font-semibold"}`}
           >
             {(product?.stock as number) > 0 ? product?.stock : "unavailable"}
           </p>
@@ -79,7 +80,6 @@ const ProductCard = ({ product }: { product: Product }) => {
         <PriceView
           price={product?.price}
           discount={product?.discount}
-          className="text-sm"
         />
         <AddToCartButton product={product} className="w-36 rounded-full" />
       </div>

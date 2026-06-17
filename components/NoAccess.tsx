@@ -27,7 +27,7 @@ const NoAccess = ({
         <CardContent className="space-y-4">
           <p className="text-center font-medium text-darkColor/80">{details}</p>
           <SignInButton mode="modal">
-            <Button className="w-full" size="lg">
+            <Button className="w-full rounded-full" size="lg">
               Sign in
             </Button>
           </SignInButton>
@@ -37,7 +37,7 @@ const NoAccess = ({
             Don&rsquo;t have an account?
           </div>
           <SignUpButton mode="modal">
-            <Button variant="outline" className="w-full" size="lg">
+            <Button variant="outline" className="w-full rounded-full" size="lg">
               Create an account
             </Button>
           </SignUpButton>

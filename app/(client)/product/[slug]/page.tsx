@@ -30,20 +30,20 @@ const SingleProductPage = async ({
       )}
       <div className="w-full md:w-1/2 flex flex-col gap-5">
         <div className="space-y-1">
-          <h2 className="text-2xl font-bold">{product?.name}</h2>
-          <p className="text-sm text-gray-600 tracking-wide">
+          <h2 className="text-3xl font-bold">{product?.name}</h2>
+          <p className="text-lg text-gray-600">
             {product?.description}
           </p>
           <div className="flex items-center gap-0.5 text-xs">
             {[...Array(5)].map((_, index) => (
               <StarIcon
                 key={index}
-                size={12}
-                className="text-shop_light_green"
-                fill={"#3b9c3c"}
+                size={15}
+                className="text-shop_yellow"
+                fill={"#ffb400"}
               />
             ))}
-            <p className="font-semibold">{`(120)`}</p>
+            <p className="font-semibold pl-2">{`(2450)`}</p>
           </div>
         </div>
         <div className="space-y-2 border-t border-b border-gray-200 py-5">
@@ -53,7 +53,7 @@ const SingleProductPage = async ({
             className="text-lg font-bold"
           />
           <p
-            className={`px-4 py-1.5 text-sm text-center inline-block font-semibold rounded-lg ${product?.stock === 0 ? "bg-red-100 text-red-600" : "text-green-600 bg-green-100"}`}
+            className={`px-4 py-1.5 text-sm text-center inline-block font-semibold rounded-full ${product?.stock === 0 ? "bg-red-100 text-red-600" : "text-green-600 bg-green-100"}`}
           >
             {(product?.stock as number) > 0 ? "In Stock" : "Out of Stock"}
           </p>
@@ -82,26 +82,25 @@ const SingleProductPage = async ({
           </div>
         </div>
         <div className="flex flex-col">
-          <div className="border border-lightColor/25 border-b-0 p-3 flex items-center gap-2.5">
+          <div className="mt-3 border rounded-full border-lightColor/25 p-3 flex items-center gap-5">
             <Truck size={30} className="text-shop_orange" />
             <div>
               <p className="text-base font-semibold text-black">
                 Free Delivery
               </p>
-              <p className="text-sm text-gray-500 underline underline-offset-2">
+              <p className="text-sm text-gray-500 ">
                 Enter your Postal code for Delivey Availability.
               </p>
             </div>
           </div>
-          <div className="border border-lightColor/25 p-3 flex items-center gap-2.5">
+          <div className="mt-5 border rounded-full border-lightColor/25 p-3 flex items-center gap-5">
             <CornerDownLeft size={30} className="text-shop_orange" />
             <div>
               <p className="text-base font-semibold text-black">
                 Return Delivery
               </p>
               <p className="text-sm text-gray-500 ">
-                Free 30days Delivery Returns.{" "}
-                <span className="underline underline-offset-2">Details</span>
+                Free 30days Delivery Returns.
               </p>
             </div>
           </div>

@@ -9,12 +9,12 @@ import React from "react";
 const DealPage = async () => {
   const products: Product[] = await getDealProducts();
   return (
-    <div className="py-10 bg-deal-bg">
-      <Container>
-        <Title className="mb-5 underline underline-offset-4 decoration-[1px] text-base uppercase tracking-wide">
-          Hot Deals of the Week
+    <div >
+      <Container className="mt-12 mb-15">
+        <Title >
+          Hot deals of the week.
         </Title>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2.5">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-8">
           {products?.map((product: Product) => (
             <ProductCard key={product._id} product={product} />
           ))}

@@ -1,17 +1,21 @@
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import React from "react";
+import Image from "next/image"
+import LogoPic from "@/images/logo.png"
 
-const Logo = ({ className, spanDesign }: { className?: string, spanDesign?:string}) => {
+
+const Logo = ({ className }: { className?: string}) => {
   return (
     <Link href={"/"} className="inline-flex">
+      <Image src={LogoPic} alt="logo" width={35} height={35} />
       <h2
         className={cn(
-          "text-2xl text-shop_dark_green font-black tracking-wider uppercase hover:text-shop_light_green hoverEffect group font-sans",
+          "text-2xl font-bold text-shop_dark_blue tracking-tighter hoverEffect group font-geist-sans",
           className
         )}
       >
-        Shopcar<span className={cn("text-shop_light_green group-hover:text-shop_dark_green hoverEffect", spanDesign)}>t</span>
+        powero
       </h2>
     </Link>
   );

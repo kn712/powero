@@ -1,27 +1,29 @@
+"use client";
 import React from "react";
-import { Title } from "./ui/text";
 import Link from "next/link";
+import { ParallaxHeroImages } from "@/components/ui/parallax-hero-images";
+import product1 from "@/images/hp1.png";
+import product2 from "@/images/hp2.png";
 
-import { banner_1 } from "@/images";
-import Image from "next/image";
+const images = [
+  product1.src,
+  product2.src,
+];
 
 const HomeBanner = () => {
   return (
-    <div className="py-16 md:py-0 bg-shop_light_pink rounded-lg px-10 lg:px-24 flex items-center justify-between">
-      <div className="space-y-5">
-        <Title className="mb-5">
-          Grab Upto 50% off on <br />
-          Seleted Headphone
-        </Title>
+    <div className="relative flex flex-col pt-80 md:pt-60 -mt-20 min-h-screen w-full items-center justify-start overflow-hidden bg-gradient-to-b from-gray-100 to-white">
+      <ParallaxHeroImages images={images} />
+      <div className="relative z-10 mx-auto flex max-w-3xl flex-col items-center gap-6 px-4 text-center">
+        <h1 className="text-4xl md:text-5xl font-medium text-black font-geist-sans leading-tight">
+          Discover headphones selected just for you.
+        </h1>
         <Link
-          href={"/shop"}
-          className="bg-shop_dark_green/90 text-white/90 px-5 py-2 rounded-md font-semibold hover:text-white hover:bg-shop_dark_green hoverEffect text-sm"
+          href="/shop"
+          className="bg-black text-white px-8 py-3 rounded-full font-medium text-md hover:bg-lightColor hoverEffect"
         >
-          Buy Now
+          Explore
         </Link>
-      </div>
-      <div>
-        <Image src={banner_1} alt="banner_1" className="hidden md:inline-flex w-96"/>
       </div>
     </div>
   );

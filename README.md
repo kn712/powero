@@ -1,4 +1,4 @@
-# ShopCart
+# Powero
 
 A full-stack e-commerce web application built with Next.js 15, Sanity CMS, Clerk authentication, and Stripe payments.
 
@@ -6,7 +6,7 @@ A full-stack e-commerce web application built with Next.js 15, Sanity CMS, Clerk
 
 | Layer | Technology |
 |---|---|
-| Framework | Next.js 15 (App Router, Turbopack) |
+| Framework | Next.js 15 (App Router) |
 | Language | TypeScript |
 | Styling | Tailwind CSS v4 |
 | UI Components | Radix UI + shadcn/ui |
@@ -18,8 +18,10 @@ A full-stack e-commerce web application built with Next.js 15, Sanity CMS, Clerk
 
 ## Features
 
+- **Parallax hero banner** — mouse-tracked parallax headphone images with responsive configs for mobile, tablet, and desktop
+- **Featured collections carousel** — auto-scrolling infinite Apple-style card carousel linking to shop categories
 - **Product catalog** — browse by category, brand, or deal; featured products on the homepage
-- **Product detail pages** — image gallery, pricing with discounts, stock status, variant types
+- **Product detail pages** — image gallery, pricing with discounts, stock status, free delivery & return cards
 - **Shopping cart** — add/remove items, quantity controls, subtotal with discount calculation; persisted in localStorage
 - **Wishlist** — save products as favourites, toggle on/off from any product card
 - **Checkout** — Stripe Checkout session with promotion code support and invoice generation
@@ -27,6 +29,9 @@ A full-stack e-commerce web application built with Next.js 15, Sanity CMS, Clerk
 - **Blog** — articles with categories, author profiles, and rich block content
 - **Search** — modal product search across the catalogue
 - **Authentication** — sign-in/sign-up via Clerk; protected routes via middleware
+- **Mobile-first shop** — filter drawer (bottom sheet) on mobile; sticky sidebar on desktop
+- **Frosted glass mobile menu** — backdrop-blur side navigation
+- **Brand showcase** — logo grid linking to brand-filtered shop pages
 - **Sanity Studio** — headless CMS at `/studio` for managing all content
 
 ## Project Structure
@@ -34,7 +39,7 @@ A full-stack e-commerce web application built with Next.js 15, Sanity CMS, Clerk
 ```
 app/
   (client)/         # Public-facing storefront
-    page.tsx        # Home — banner, featured products, categories, brands, blog
+    page.tsx        # Home — banner, featured products, carousel, brands, blog
     cart/           # Shopping cart
     product/[slug]/ # Product detail
     category/[slug]/# Products by category
@@ -50,6 +55,8 @@ actions/
   createCheckoutSession.ts  # Stripe server action
   productActions.ts         # Product-related server actions
 components/         # Shared UI components
+  ui/               # Base UI primitives + custom components
+  shop/             # Shop filter components (category, brand, price)
 sanity/
   schemaTypes/      # Content models (product, order, brand, blog, …)
   queries/          # GROQ queries
@@ -70,8 +77,8 @@ middleware.ts       # Clerk auth middleware
 ### Installation
 
 ```bash
-git clone https://github.com/kn712/shopcart.git
-cd shopcart
+git clone https://github.com/kn712/shopcartyt.git
+cd shopcartyt
 npm install
 ```
 
@@ -126,7 +133,7 @@ npm run typegen
 |---|---|
 | `product` | Name, slug, images, price, discount %, stock, brand, category, status (new/hot/sale), variant, featured flag |
 | `category` | Product categories |
-| `brand` | Product brands |
+| `brand` | Product brands with logo images |
 | `order` | Customer orders with line items and status |
 | `blog` | Blog posts with rich block content |
 | `blogCategory` | Blog categories |

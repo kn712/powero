@@ -9,28 +9,28 @@ interface ContactItemData {
 const data: ContactItemData[] = [
   {
     title: "Visit Us",
-    subtitle: "New Orlean, USA",
+    subtitle: "San Jose, CA",
     icon: (
       <MapPin className="h-6 w-6 text-gray-600 group-hover:text-primary transition-colors" />
     ),
   },
   {
     title: "Call Us",
-    subtitle: "+12 958 648 597",
+    subtitle: "+1 (840)-207-9981",
     icon: (
       <Phone className="h-6 w-6 text-gray-600 group-hover:text-primary transition-colors" />
     ),
   },
   {
     title: "Working Hours",
-    subtitle: "Mon - Sat: 10:00 AM - 7:00 PM",
+    subtitle: "Mon - Fri: 9:00 AM - 6:00 PM",
     icon: (
       <Clock className="h-6 w-6 text-gray-600 group-hover:text-primary transition-colors" />
     ),
   },
   {
     title: "Email Us",
-    subtitle: "Shopcart@gmail.com",
+    subtitle: "ningke947@gmail.com",
     icon: (
       <Mail className="h-6 w-6 text-gray-600 group-hover:text-primary transition-colors" />
     ),

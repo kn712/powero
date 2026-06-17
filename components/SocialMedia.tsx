@@ -23,7 +23,7 @@ const socialLink = [
   },
   {
     title: "Github",
-    href: "",
+    href: "https://github.com/kn712",
     icon: <Github className="w-5 h-5" />,
   },
   {

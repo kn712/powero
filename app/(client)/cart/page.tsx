@@ -100,12 +100,12 @@ const CartPage = () => {
     }
   };
   return (
-    <div className="bg-gray-50 pb-52 md:pb-10">
+    <div className="bg-white pb-52 md:pb-10">
       {isSignedIn ? (
         <Container>
           {groupedItems?.length ? (
             <>
-              <div className="flex items-center gap-2 py-5">
+              <div className="flex items-center gap-2 mt-12 mb-5">
                 <ShoppingBag className="text-darkColor" />
                 <Title>Shopping Cart</Title>
               </div>

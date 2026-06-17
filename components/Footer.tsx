@@ -18,7 +18,7 @@ const Footer = () => {
           <div className="space-y-4">
             <Logo />
             <SubText>
-              Discover curated furniture collections at Shopcartyt, blending
+              Discover curated furniture collections at powero, blending
               style and comfort to elevate your living spaces.
             </SubText>
             <SocialMedia
@@ -69,9 +69,8 @@ const Footer = () => {
           </div>
         </div>
         <div className="py-6 border-t text-center text-sm text-gray-600">
-          <div>
-            © {new Date().getFullYear()} <Logo className="text-sm" />. All
-            rights reserved.
+          <div className="flex items-center justify-center gap-1">
+            © {new Date().getFullYear()} <span className="font-semibold text-darkColor">powero</span>. All rights reserved.
           </div>
           </div>
       </Container>
