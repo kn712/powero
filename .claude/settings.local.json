@@ -6,7 +6,8 @@
       "Bash(pkill:*)",
       "Bash(npm run:*)",
       "Bash(sudo npm install next@latest)",
-      "Bash(git *)"
+      "Bash(git *)",
+      "Bash(vercel env *)"
     ],
     "deny": []
   }
